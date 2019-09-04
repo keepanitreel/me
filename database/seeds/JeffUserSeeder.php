@@ -12,10 +12,12 @@ class JeffUserSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            "name"=>"Jeffrey Cobb",
-            "email"=>"jeff@jeffcobb.com",
-            "password"=>"foo bar baz"
-        ]);
+        if(empty(User::where('email', 'jeff@jeffcobb.com')->first())) {
+            User::create([
+                "name"     => "Jeffrey Cobb",
+                "email"    => "jeff@jeffcobb.com",
+                "password" => "foo bar baz"
+            ]);
+        }
     }
 }

@@ -9,6 +9,7 @@ environments:
         build:
             - 'composer install --no-dev --classmap-authoritative'
             - 'php artisan migrate --force'
+            - 'php artisan db:seed'
             - 'php artisan event:cache'
             - 'npm install && npm run prod && rm -rf node_modules'
     staging:
@@ -19,5 +20,6 @@ environments:
         build:
             - 'composer install --classmap-authoritative'
             - 'php artisan migrate --force'
+            - 'php artisan db:seed'
             - 'php artisan event:cache'
             - 'npm install && npm run dev && rm -rf node_modules'

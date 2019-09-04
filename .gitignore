@@ -13,3 +13,6 @@ yarn-error.log
 .vapor/
 .env.production
 .env.staging
+.idea
+.idea/
+/.idea/workspace.xml
